@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusiLife - Life of a Musician</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-container">
+            <h1 class="game-title">Welcome to MusiLife</h1>
+            <p class="game-subtitle">Live the journey from bedroom musician to superstar</p>
+            <button id="start-game-btn" class="primary-button">Start New Adventure</button>
+        </div>
+    </div>
+
+    <!-- Name Input Screen -->
+    <div id="name-screen" class="screen">
+        <div class="name-container">
+            <h2>Choose Your Name</h2>
+            <input type="text" id="player-name" placeholder="Enter your musician name..." maxlength="20">
+            <button id="confirm-name-btn" class="primary-button" disabled>Begin Journey</button>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="screen">
+        <!-- Debug Reset Button -->
+        <button id="reset-btn" class="reset-button">Reset</button>
+
+        <!-- Header with Player Info -->
+        <header class="game-header">
+            <div class="player-info">
+                <h3 id="player-name-display">Player Name</h3>
+                <div class="age-phase">
+                    <span id="player-age">Age: 15</span>
+                    <span id="current-phase">Decision Phase</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Layout -->
+        <div class="game-layout">
+            <!-- Left Panel: Stats -->
+            <aside class="stats-panel">
+                <h4>Stats</h4>
+                <div class="stats-grid">
+                    <div class="stat-item" data-tooltip="Charisma">
+                        <span class="stat-icon">🎭</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="charisma-bar"></div>
+                        </div>
+                        <span class="stat-value" id="charisma-value">0</span>
+                    </div>
+                    <div class="stat-item" data-tooltip="Vocals">
+                        <span class="stat-icon">🎤</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="vocals-bar"></div>
+                        </div>
+                        <span class="stat-value" id="vocals-value">0</span>
+                    </div>
+                    <div class="stat-item" data-tooltip="Rhythm">
+                        <span class="stat-icon">🥁</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="rhythm-bar"></div>
+                        </div>
+                        <span class="stat-value" id="rhythm-value">0</span>
+                    </div>
+                    <div class="stat-item" data-tooltip="Creativity">
+                        <span class="stat-icon">🎨</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="creativity-bar"></div>
+                        </div>
+                        <span class="stat-value" id="creativity-value">0</span>
+                    </div>
+                    <div class="stat-item" data-tooltip="Luck">
+                        <span class="stat-icon">🍀</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="luck-bar"></div>
+                        </div>
+                        <span class="stat-value" id="luck-value">0</span>
+                    </div>
+                    <div class="stat-item" data-tooltip="Skill">
+                        <span class="stat-icon">🎸</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="skill-bar"></div>
+                        </div>
+                        <span class="stat-value" id="skill-value">0</span>
+                    </div>
+                    <div class="stat-item" data-tooltip="Intelligence">
+                        <span class="stat-icon">🧠</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="intelligence-bar"></div>
+                        </div>
+                        <span class="stat-value" id="intelligence-value">0</span>
+                    </div>
+                </div>
+
+                <h4>Resources</h4>
+                <div class="resources-grid">
+                    <div class="resource-item" data-tooltip="Motivation">
+                        <span class="resource-icon">⚡</span>
+                        <span class="resource-value" id="motivation-value">70</span>
+                    </div>
+                    <div class="resource-item" data-tooltip="Happiness">
+                        <span class="resource-icon">😊</span>
+                        <span class="resource-value" id="happiness-value">65</span>
+                    </div>
+                    <div class="resource-item" data-tooltip="Audience">
+                        <span class="resource-icon">👥</span>
+                        <span class="resource-value" id="audience-value">0</span>
+                    </div>
+                    <div class="resource-item" data-tooltip="Fame">
+                        <span class="resource-icon">⭐</span>
+                        <span class="resource-value" id="fame-value">0</span>
+                    </div>
+                    <div class="resource-item" data-tooltip="Money">
+                        <span class="resource-icon">💰</span>
+                        <span class="resource-value" id="money-value">$200</span>
+                    </div>
+                    <div class="resource-item" data-tooltip="Health">
+                        <span class="resource-icon">❤️</span>
+                        <span class="resource-value" id="health-value">95</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center: Main Content -->
+            <main class="game-content">
+                <div class="narrative-section">
+                    <h3 id="scenario-title">Your Musical Journey Begins</h3>
+                    <p id="scenario-text">Welcome to your life as a musician! You're starting fresh with natural talent and big dreams. What will your first step be?</p>
+                </div>
+
+                <div class="choices-section">
+                    <h4>Choose Your Path:</h4>
+                    <div class="choices-container">
+                        <button class="choice-button" data-choice="1">
+                            <span class="choice-text">Option 1 (Coming Soon)</span>
+                        </button>
+                        <button class="choice-button" data-choice="2">
+                            <span class="choice-text">Option 2 (Coming Soon)</span>
+                        </button>
+                        <button class="choice-button" data-choice="3">
+                            <span class="choice-text">Option 3 (Coming Soon)</span>
+                        </button>
+                        <button class="choice-button" data-choice="4">
+                            <span class="choice-text">Option 4 (Coming Soon)</span>
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Panel: Game Log -->
+            <aside class="log-panel">
+                <h4>Game Log</h4>
+                <div class="log-content" id="game-log">
+                    <div class="log-entry">
+                        <span class="log-time">Age 15</span>
+                        <span class="log-text">Your musical journey begins...</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
