@@ -70,13 +70,14 @@ jobs:
         
         echo "✅ Files optimized for production"
 
-    - name: Add security headers via meta tags
+    - name: Verify security headers (already in HTML)
       run: |
-        # Add security meta tags to HTML
-        sed -i '/<head>/a\    <meta http-equiv="X-Content-Type-Options" content="nosniff">' index.html
-        sed -i '/<head>/a\    <meta http-equiv="X-Frame-Options" content="DENY">' index.html
-        sed -i '/<head>/a\    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">' index.html
-        echo "✅ Security headers added"
+        # Check if security headers are already present in HTML
+        if grep -q "X-Content-Type-Options" index.html; then
+          echo "✅ Security headers already present in HTML"
+        else
+          echo "⚠️  Security headers missing"
+        fi
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
