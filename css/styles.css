@@ -468,3 +468,64 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255,215,0,0.8);
 }
+
+/* Footer Credits */
+.game-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0.8rem 0;
+    z-index: 100;
+}
+
+.credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.credits .separator {
+    color: rgba(255,255,255,0.4);
+}
+
+.credits a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.credits a:hover {
+    color: #ffed4e;
+    text-decoration: underline;
+}
+
+/* Adjust body padding to account for fixed footer */
+body {
+    padding-bottom: 50px;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .credits {
+        font-size: 0.8rem;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    
+    .game-footer {
+        padding: 0.6rem 0;
+    }
+    
+    body {
+        padding-bottom: 45px;
+    }
+}
