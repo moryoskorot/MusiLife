@@ -1,0 +1,182 @@
+{
+  "events": [
+    {
+      "id": "viral_video",
+      "title": "Viral Moment",
+      "description": "A video of you performing goes viral on social media!",
+      "ageRange": [16, 40],
+      "probability": 0.05,
+      "requires": {
+        "minStats": { "audience": 100 },
+        "flags": []
+      },
+      "effects": {
+        "audience": 2000,
+        "fame": 10,
+        "happiness": 15,
+        "motivation": 10
+      }
+    },
+    {
+      "id": "equipment_breaks",
+      "title": "Equipment Failure",
+      "description": "Your main instrument breaks during an important performance!",
+      "ageRange": [15, 50],
+      "probability": 0.08,
+      "requires": {
+        "minStats": {},
+        "flags": []
+      },
+      "effects": {
+        "motivation": -10,
+        "money": -300,
+        "happiness": -8
+      }
+    },
+    {
+      "id": "music_critic_review",
+      "title": "Music Critic Review",
+      "description": "A respected music critic writes about your work.",
+      "ageRange": [20, 60],
+      "probability": 0.06,
+      "requires": {
+        "minStats": { "fame": 25 },
+        "flags": []
+      },
+      "choices": [
+        {
+          "text": "The review is overwhelmingly positive",
+          "probability": 0.3,
+          "effects": {
+            "fame": 15,
+            "audience": 1000,
+            "motivation": 20,
+            "happiness": 12
+          }
+        },
+        {
+          "text": "Mixed review - some praise, some criticism",
+          "probability": 0.5,
+          "effects": {
+            "fame": 3,
+            "audience": 200,
+            "motivation": -2,
+            "intelligence": 2
+          }
+        },
+        {
+          "text": "Harsh negative review that stings",
+          "probability": 0.2,
+          "effects": {
+            "fame": -5,
+            "motivation": -15,
+            "happiness": -10,
+            "creativity": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "health_scare",
+      "title": "Health Concerns",
+      "description": "The stress of your music career is taking a toll on your health.",
+      "ageRange": [25, 65],
+      "probability": 0.04,
+      "requires": {
+        "minStats": {},
+        "flags": []
+      },
+      "effects": {
+        "health": -20,
+        "happiness": -10,
+        "motivation": -5
+      }
+    },
+    {
+      "id": "unexpected_collaboration",
+      "title": "Surprise Collaboration",
+      "description": "A musician you admire reaches out wanting to work together!",
+      "ageRange": [18, 45],
+      "probability": 0.03,
+      "requires": {
+        "minStats": { "fame": 30, "skill": 8 },
+        "flags": []
+      },
+      "effects": {
+        "fame": 12,
+        "audience": 1500,
+        "creativity": 3,
+        "happiness": 20,
+        "motivation": 15
+      }
+    },
+    {
+      "id": "financial_windfall",
+      "title": "Unexpected Income",
+      "description": "An old song of yours is used in a popular movie!",
+      "ageRange": [22, 55],
+      "probability": 0.02,
+      "requires": {
+        "minStats": { "creativity": 5 },
+        "flags": []
+      },
+      "effects": {
+        "money": 15000,
+        "fame": 8,
+        "audience": 3000,
+        "happiness": 18
+      }
+    },
+    {
+      "id": "personal_loss",
+      "title": "Personal Tragedy",
+      "description": "You experience a significant personal loss that affects your music.",
+      "ageRange": [20, 65],
+      "probability": 0.03,
+      "requires": {
+        "minStats": {},
+        "flags": []
+      },
+      "effects": {
+        "happiness": -25,
+        "motivation": -15,
+        "creativity": 5,
+        "health": -10
+      }
+    },
+    {
+      "id": "award_nomination",
+      "title": "Award Nomination",
+      "description": "You've been nominated for a prestigious music award!",
+      "ageRange": [21, 60],
+      "probability": 0.04,
+      "requires": {
+        "minStats": { "fame": 50, "audience": 5000 },
+        "flags": []
+      },
+      "choices": [
+        {
+          "text": "You win the award!",
+          "probability": 0.25,
+          "effects": {
+            "fame": 25,
+            "audience": 5000,
+            "money": 10000,
+            "happiness": 30,
+            "motivation": 20
+          }
+        },
+        {
+          "text": "You don't win, but the nomination boosts your profile",
+          "probability": 0.75,
+          "effects": {
+            "fame": 8,
+            "audience": 1000,
+            "happiness": 5,
+            "motivation": 3
+          }
+        }
+      ]
+    }
+  ]
+}

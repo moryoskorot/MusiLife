@@ -1,0 +1,1073 @@
+{
+  "questions": [
+    {
+      "id": "q_early_music_1",
+      "ageRange": [13, 18],
+      "title": "Musical Foundation",
+      "text": "Your parents offer to pay for music lessons. What do you choose?",
+      "options": [
+        {
+          "text": "Classical piano lessons",
+          "effects": {
+            "skill": 2,
+            "intelligence": 1,
+            "creativity": -1
+          },
+          "unlocks": ["classical_path"],
+          "requires": {}
+        },
+        {
+          "text": "Guitar lessons at the local music shop",
+          "effects": {
+            "skill": 1,
+            "charisma": 1,
+            "creativity": 1
+          },
+          "unlocks": ["rock_path"],
+          "requires": {}
+        },
+        {
+          "text": "Voice coaching",
+          "effects": {
+            "vocals": 3,
+            "charisma": 1
+          },
+          "unlocks": ["vocal_path"],
+          "requires": {}
+        },
+        {
+          "text": "Save the money instead",
+          "effects": {
+            "intelligence": 2,
+            "resources": {
+              "money": 200
+            }
+          },
+          "unlocks": ["diy_path"],
+          "requires": {}
+        }
+      ]
+    },
+    {
+      "id": "q_practice_routine",
+      "ageRange": [13, 20],
+      "title": "Daily Practice",
+      "text": "How do you spend your daily practice time?",
+      "options": [
+        {
+          "text": "Focus on technical scales and exercises",
+          "effects": {
+            "skill": 2,
+            "happiness": -1
+          }
+        },
+        {
+          "text": "Learn popular songs from the radio",
+          "effects": {
+            "skill": 1,
+            "charisma": 1,
+            "happiness": 1
+          }
+        },
+        {
+          "text": "Write and compose original music",
+          "effects": {
+            "creativity": 2,
+            "intelligence": 1
+          }
+        },
+        {
+          "text": "Practice sporadically when you feel like it",
+          "effects": {
+            "happiness": 2,
+            "motivation": -2,
+            "skill": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_social_music",
+      "ageRange": [14, 22],
+      "title": "Social Connections",
+      "text": "Your friends invite you to jam at someone's garage. You:",
+      "options": [
+        {
+          "text": "Show up and try to lead the session",
+          "effects": {
+            "charisma": 2,
+            "confidence": 1,
+            "resources": {
+              "audience": 10
+            }
+          },
+          "requires": {
+            "charisma": 3
+          }
+        },
+        {
+          "text": "Play supportive background parts",
+          "effects": {
+            "skill": 1,
+            "happiness": 2,
+            "resources": {
+              "audience": 5
+            }
+          }
+        },
+        {
+          "text": "Bring recording equipment to capture the session ($50)",
+          "effects": {
+            "intelligence": 1,
+            "creativity": 1,
+            "resources": {
+              "money": -50
+            }
+          },
+          "requires": {
+            "minStats": {
+              "money": 50
+            }
+          }
+        },
+        {
+          "text": "Stay home and practice alone instead",
+          "effects": {
+            "skill": 2,
+            "happiness": -2,
+            "motivation": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_equipment_choice",
+      "ageRange": [15, 25],
+      "title": "Equipment Investment",
+      "text": "You've saved up money. What's your priority purchase?",
+      "requires": {
+        "minStats": {
+          "money": 350
+        }
+      },
+      "options": [
+        {
+          "text": "A professional-quality instrument ($500)",
+          "effects": {
+            "skill": 1,
+            "resources": {
+              "money": -500
+            }
+          },
+          "unlocks": ["pro_instrument"],
+          "requires": {
+            "minStats": {
+              "money": 500
+            }
+          }
+        },
+        {
+          "text": "Recording equipment and software ($400)",
+          "effects": {
+            "creativity": 1,
+            "intelligence": 1,
+            "resources": {
+              "money": -400
+            }
+          },
+          "unlocks": ["home_studio"],
+          "requires": {
+            "minStats": {
+              "money": 400
+            }
+          }
+        },
+        {
+          "text": "Amplifier and performance gear ($350)",
+          "effects": {
+            "charisma": 1,
+            "resources": {
+              "money": -350
+            }
+          },
+          "unlocks": ["live_performance"],
+          "requires": {
+            "minStats": {
+              "money": 350
+            }
+          }
+        },
+        {
+          "text": "Keep saving for something bigger",
+          "effects": {
+            "intelligence": 1,
+            "resources": {
+              "money": 100
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_school_music",
+      "ageRange": [16, 18],
+      "title": "School Opportunities",
+      "text": "Your school is producing a musical. How do you get involved?",
+      "options": [
+        {
+          "text": "Audition for the lead role",
+          "effects": {
+            "vocals": 1,
+            "charisma": 2,
+            "resources": {
+              "audience": 50,
+              "fame": 2
+            }
+          },
+          "requires": {
+            "vocals": 4,
+            "charisma": 3
+          }
+        },
+        {
+          "text": "Join the orchestra pit",
+          "effects": {
+            "skill": 2,
+            "intelligence": 1,
+            "resources": {
+              "audience": 20
+            }
+          }
+        },
+        {
+          "text": "Help with sound and lighting",
+          "effects": {
+            "intelligence": 2,
+            "resources": {
+              "audience": 10
+            }
+          },
+          "unlocks": ["tech_skills"]
+        },
+        {
+          "text": "Write original songs for the production",
+          "effects": {
+            "creativity": 3,
+            "resources": {
+              "fame": 3
+            }
+          },
+          "requires": {
+            "creativity": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_first_gig",
+      "ageRange": [17, 25],
+      "title": "First Performance",
+      "text": "You're offered your first paid gig at a local coffee shop. Your approach:",
+      "options": [
+        {
+          "text": "Prepare meticulously with a setlist of covers",
+          "effects": {
+            "skill": 1,
+            "resources": {
+              "money": 100,
+              "audience": 25
+            }
+          }
+        },
+        {
+          "text": "Mix covers with your original songs",
+          "effects": {
+            "creativity": 1,
+            "charisma": 1,
+            "resources": {
+              "money": 100,
+              "audience": 20,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Play only original material",
+          "effects": {
+            "creativity": 2,
+            "resources": {
+              "money": 80,
+              "audience": 15,
+              "fame": 3
+            }
+          },
+          "requires": {
+            "creativity": 4
+          }
+        },
+        {
+          "text": "Turn it down - you're not ready yet",
+          "effects": {
+            "motivation": -3,
+            "happiness": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_college_decision",
+      "ageRange": [17, 19],
+      "title": "Education Path",
+      "text": "You're deciding about college. What's your plan?",
+      "options": [
+        {
+          "text": "Music conservatory or music school ($5,000)",
+          "effects": {
+            "skill": 2,
+            "intelligence": 2,
+            "resources": {
+              "money": -5000
+            }
+          },
+          "unlocks": ["formal_education"],
+          "requires": {
+            "minStats": {
+              "money": 5000
+            }
+          }
+        },
+        {
+          "text": "Regular college with music minor ($3,000)",
+          "effects": {
+            "intelligence": 3,
+            "skill": 1,
+            "resources": {
+              "money": -3000
+            }
+          },
+          "unlocks": ["backup_career"],
+          "requires": {
+            "minStats": {
+              "money": 3000
+            }
+          }
+        },
+        {
+          "text": "Community college music program ($1,000)",
+          "effects": {
+            "intelligence": 1,
+            "skill": 1,
+            "resources": {
+              "money": -1000
+            }
+          },
+          "requires": {
+            "minStats": {
+              "money": 1000
+            }
+          }
+        },
+        {
+          "text": "Skip college and focus on music full-time",
+          "effects": {
+            "motivation": 2,
+            "creativity": 1,
+            "resources": {
+              "money": 2000
+            }
+          },
+          "unlocks": ["self_taught"]
+        }
+      ]
+    },
+    {
+      "id": "q_band_formation",
+      "ageRange": [18, 28],
+      "title": "Band Dynamics",
+      "text": "You're forming a band with friends. What role do you take?",
+      "options": [
+        {
+          "text": "Lead vocalist and frontperson",
+          "effects": {
+            "vocals": 1,
+            "charisma": 2,
+            "resources": {
+              "audience": 30
+            }
+          },
+          "requires": {
+            "vocals": 5,
+            "charisma": 4
+          }
+        },
+        {
+          "text": "Lead guitarist and songwriter",
+          "effects": {
+            "skill": 2,
+            "creativity": 1,
+            "resources": {
+              "audience": 20
+            }
+          }
+        },
+        {
+          "text": "Bass player and musical director",
+          "effects": {
+            "rhythm": 2,
+            "intelligence": 1,
+            "resources": {
+              "audience": 15
+            }
+          }
+        },
+        {
+          "text": "Manager and booking agent",
+          "effects": {
+            "intelligence": 2,
+            "charisma": 1,
+            "resources": {
+              "money": 50
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_genre_focus",
+      "ageRange": [19, 30],
+      "title": "Musical Identity",
+      "text": "You need to define your musical style. What direction speaks to you?",
+      "options": [
+        {
+          "text": "Rock/Alternative - raw energy and guitar-driven",
+          "effects": {
+            "charisma": 1,
+            "skill": 1,
+            "resources": {
+              "audience": 40
+            }
+          },
+          "unlocks": ["rock_scene"]
+        },
+        {
+          "text": "Pop - catchy hooks and broad appeal",
+          "effects": {
+            "charisma": 2,
+            "resources": {
+              "audience": 60,
+              "money": 200
+            }
+          },
+          "unlocks": ["mainstream_appeal"]
+        },
+        {
+          "text": "Jazz/Blues - sophisticated and skillful",
+          "effects": {
+            "skill": 2,
+            "intelligence": 1,
+            "resources": {
+              "audience": 20,
+              "fame": 2
+            }
+          },
+          "unlocks": ["jazz_circuit"]
+        },
+        {
+          "text": "Electronic/Experimental - innovative and unique",
+          "effects": {
+            "creativity": 2,
+            "intelligence": 1,
+            "resources": {
+              "audience": 25,
+              "fame": 3
+            }
+          },
+          "unlocks": ["experimental_scene"]
+        }
+      ]
+    },
+    {
+      "id": "q_social_media",
+      "ageRange": [20, 35],
+      "title": "Digital Presence",
+      "text": "How do you approach building an online following?",
+      "options": [
+        {
+          "text": "Post daily content and engage constantly",
+          "effects": {
+            "charisma": 1,
+            "resources": {
+              "audience": 100,
+              "happiness": -2
+            }
+          }
+        },
+        {
+          "text": "Focus on high-quality weekly posts",
+          "effects": {
+            "creativity": 1,
+            "intelligence": 1,
+            "resources": {
+              "audience": 50,
+              "fame": 2
+            }
+          }
+        },
+        {
+          "text": "Only post when you have something meaningful",
+          "effects": {
+            "intelligence": 1,
+            "resources": {
+              "audience": 20,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Avoid social media and focus on live performance",
+          "effects": {
+            "skill": 1,
+            "happiness": 1,
+            "resources": {
+              "audience": -10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_career_crossroads",
+      "ageRange": [25, 45],
+      "title": "Career Crossroads",
+      "text": "Your music career has reached a plateau. What's your next move?",
+      "options": [
+        {
+          "text": "Reinvent your sound completely",
+          "effects": {
+            "creativity": 2,
+            "resources": {
+              "audience": -20,
+              "fame": 3
+            }
+          }
+        },
+        {
+          "text": "Collaborate with younger artists",
+          "effects": {
+            "charisma": 1,
+            "resources": {
+              "audience": 30,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Focus on touring and live performance",
+          "effects": {
+            "skill": 1,
+            "resources": {
+              "money": 500,
+              "audience": 10
+            }
+          }
+        },
+        {
+          "text": "Take a break and reassess",
+          "effects": {
+            "happiness": 3,
+            "motivation": -2,
+            "resources": {
+              "audience": -10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_mentorship",
+      "ageRange": [30, 60],
+      "title": "Passing It On",
+      "text": "Young musicians seek your guidance. How do you respond?",
+      "options": [
+        {
+          "text": "Start teaching at a music school",
+          "effects": {
+            "intelligence": 2,
+            "happiness": 2,
+            "resources": {
+              "money": 300,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Mentor individual artists personally",
+          "effects": {
+            "charisma": 1,
+            "happiness": 3,
+            "resources": {
+              "audience": 20
+            }
+          }
+        },
+        {
+          "text": "Create online tutorials and courses",
+          "effects": {
+            "intelligence": 1,
+            "resources": {
+              "money": 200,
+              "audience": 50
+            }
+          }
+        },
+        {
+          "text": "Focus on your own music first",
+          "effects": {
+            "skill": 1,
+            "creativity": 1,
+            "resources": {
+              "motivation": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_legacy_project",
+      "ageRange": [35, 70],
+      "title": "Legacy Creation",
+      "text": "You want to create something that will outlast you. What do you pursue?",
+      "options": [
+        {
+          "text": "Write an autobiography",
+          "effects": {
+            "intelligence": 2,
+            "resources": {
+              "money": 1000,
+              "fame": 5
+            }
+          }
+        },
+        {
+          "text": "Establish a music foundation or charity",
+          "effects": {
+            "charisma": 2,
+            "happiness": 3,
+            "resources": {
+              "money": -2000,
+              "fame": 3
+            }
+          }
+        },
+        {
+          "text": "Produce a documentary about your genre",
+          "effects": {
+            "intelligence": 1,
+            "creativity": 1,
+            "resources": {
+              "fame": 4
+            }
+          }
+        },
+        {
+          "text": "Keep creating music as your legacy",
+          "effects": {
+            "creativity": 2,
+            "skill": 1,
+            "motivation": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_health_management",
+      "ageRange": [40, 80],
+      "title": "Health Priorities",
+      "text": "Age is catching up with you. How do you adapt your music career?",
+      "options": [
+        {
+          "text": "Scale back touring, focus on studio work",
+          "effects": {
+            "health": 2,
+            "creativity": 1,
+            "resources": {
+              "money": -100,
+              "audience": -20
+            }
+          }
+        },
+        {
+          "text": "Maintain full schedule with better health support",
+          "effects": {
+            "resources": {
+              "money": -300,
+              "health": 1
+            }
+          }
+        },
+        {
+          "text": "Switch to acoustic/unplugged performances",
+          "effects": {
+            "skill": 1,
+            "health": 1,
+            "resources": {
+              "audience": 10
+            }
+          }
+        },
+        {
+          "text": "Push through - rock stars don't retire",
+          "effects": {
+            "motivation": 2,
+            "resources": {
+              "health": -3,
+              "fame": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_industry_changes",
+      "ageRange": [30, 80],
+      "title": "Industry Evolution",
+      "text": "The music industry has changed dramatically. How do you adapt?",
+      "options": [
+        {
+          "text": "Embrace streaming and digital platforms",
+          "effects": {
+            "intelligence": 1,
+            "resources": {
+              "audience": 40,
+              "money": 100
+            }
+          }
+        },
+        {
+          "text": "Focus on vinyl and physical media collectors",
+          "effects": {
+            "resources": {
+              "audience": 20,
+              "money": 200,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Partner with younger producers and tech-savvy artists",
+          "effects": {
+            "charisma": 1,
+            "creativity": 1,
+            "resources": {
+              "audience": 30
+            }
+          }
+        },
+        {
+          "text": "Stick to traditional methods that worked before",
+          "effects": {
+            "skill": 1,
+            "resources": {
+              "audience": -30,
+              "money": -100
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_retirement_consideration",
+      "ageRange": [50, 100],
+      "title": "Retirement Thoughts",
+      "text": "People are asking when you'll retire. What's your response?",
+      "options": [
+        {
+          "text": "Music is life - I'll never stop",
+          "effects": {
+            "motivation": 3,
+            "happiness": 2,
+            "resources": {
+              "health": -1
+            }
+          }
+        },
+        {
+          "text": "I'll scale back gradually",
+          "effects": {
+            "intelligence": 1,
+            "happiness": 1,
+            "health": 1
+          }
+        },
+        {
+          "text": "I'm considering it seriously",
+          "effects": {
+            "happiness": -1,
+            "motivation": -2,
+            "resources": {
+              "health": 2
+            }
+          }
+        },
+        {
+          "text": "One more album, then we'll see",
+          "effects": {
+            "creativity": 1,
+            "motivation": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_part_time_work",
+      "ageRange": [16, 30],
+      "title": "Part-Time Job",
+      "text": "You need extra money. What part-time work do you take?",
+      "options": [
+        {
+          "text": "Work at a music shop",
+          "effects": {
+            "intelligence": 1,
+            "skill": 1,
+            "resources": {
+              "money": 300,
+              "audience": 10
+            }
+          }
+        },
+        {
+          "text": "Give music lessons to kids",
+          "effects": {
+            "charisma": 1,
+            "happiness": 2,
+            "resources": {
+              "money": 400
+            }
+          }
+        },
+        {
+          "text": "Play acoustic sets at cafes",
+          "effects": {
+            "skill": 1,
+            "charisma": 1,
+            "resources": {
+              "money": 250,
+              "audience": 20
+            }
+          }
+        },
+        {
+          "text": "Work retail to pay the bills",
+          "effects": {
+            "resources": {
+              "money": 500,
+              "happiness": -3,
+              "motivation": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_street_performance",
+      "ageRange": [15, 35],
+      "title": "Street Performance",
+      "text": "You decide to busk on the street for extra money. What's your approach?",
+      "options": [
+        {
+          "text": "Play popular covers everyone knows",
+          "effects": {
+            "charisma": 1,
+            "resources": {
+              "money": 100,
+              "audience": 15
+            }
+          }
+        },
+        {
+          "text": "Perform original songs to build a following",
+          "effects": {
+            "creativity": 1,
+            "resources": {
+              "money": 75,
+              "audience": 25,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Do instrumental pieces to show off skill",
+          "effects": {
+            "skill": 1,
+            "resources": {
+              "money": 120,
+              "audience": 10
+            }
+          }
+        },
+        {
+          "text": "Play requests for tips",
+          "effects": {
+            "happiness": 1,
+            "resources": {
+              "money": 150,
+              "audience": 20
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_songwriting_gig",
+      "ageRange": [20, 50],
+      "title": "Songwriting Opportunity",
+      "text": "Someone wants to commission a song. What type of work do you take?",
+      "options": [
+        {
+          "text": "Write a jingle for a local business",
+          "effects": {
+            "creativity": 1,
+            "resources": {
+              "money": 400
+            }
+          }
+        },
+        {
+          "text": "Compose music for a small indie film",
+          "effects": {
+            "creativity": 2,
+            "intelligence": 1,
+            "resources": {
+              "money": 600,
+              "fame": 2
+            }
+          }
+        },
+        {
+          "text": "Write a song for another artist",
+          "effects": {
+            "creativity": 1,
+            "charisma": 1,
+            "resources": {
+              "money": 800,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Decline - focus on your own music",
+          "effects": {
+            "motivation": 1,
+            "creativity": 1,
+            "resources": {
+              "happiness": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_small_gigs",
+      "ageRange": [18, 40],
+      "title": "Small Venue Opportunities",
+      "text": "Local venues are looking for performers. What gigs do you book?",
+      "options": [
+        {
+          "text": "Play at a wedding ceremony",
+          "effects": {
+            "charisma": 1,
+            "happiness": 1,
+            "resources": {
+              "money": 300,
+              "audience": 5
+            }
+          }
+        },
+        {
+          "text": "Perform at a birthday party",
+          "effects": {
+            "happiness": 2,
+            "resources": {
+              "money": 200,
+              "audience": 10
+            }
+          }
+        },
+        {
+          "text": "Play at a local bar's open mic night",
+          "effects": {
+            "skill": 1,
+            "charisma": 1,
+            "resources": {
+              "money": 150,
+              "audience": 30
+            }
+          }
+        },
+        {
+          "text": "Host your own small concert at a community center",
+          "effects": {
+            "intelligence": 1,
+            "charisma": 2,
+            "resources": {
+              "money": 250,
+              "audience": 40,
+              "fame": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_music_side_hustles",
+      "ageRange": [22, 60],
+      "title": "Music Side Hustles",
+      "text": "You're exploring additional income streams. What appeals to you?",
+      "options": [
+        {
+          "text": "Offer online music lessons via video calls",
+          "effects": {
+            "intelligence": 1,
+            "charisma": 1,
+            "resources": {
+              "money": 500,
+              "audience": 15
+            }
+          }
+        },
+        {
+          "text": "Sell beats and backing tracks online",
+          "effects": {
+            "creativity": 1,
+            "intelligence": 1,
+            "resources": {
+              "money": 300,
+              "audience": 25
+            }
+          }
+        },
+        {
+          "text": "Do session work for other artists",
+          "effects": {
+            "skill": 2,
+            "charisma": 1,
+            "resources": {
+              "money": 600,
+              "fame": 1
+            }
+          }
+        },
+        {
+          "text": "Write and sell sheet music arrangements",
+          "effects": {
+            "intelligence": 2,
+            "creativity": 1,
+            "resources": {
+              "money": 350
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
