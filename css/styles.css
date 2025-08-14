@@ -6,7 +6,7 @@
 }
 
 html {
-    background: red;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
 }
 
@@ -487,6 +487,11 @@ body::after {
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255,215,0,0.8);
+}
+
+/* Hide Netlify deployment banner */
+div[data-netlify-deploy-id] {
+    display: none !important;
 }
 
 /* Footer Credits */
