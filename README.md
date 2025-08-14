@@ -2,9 +2,13 @@
 
 > **Built with the help of [Cline](https://github.com/cline/cline) - AI coding assistant** 🤖✨
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/53827084-33e1-4206-9c13-91adf1ae588b/deploy-status)](https://app.netlify.com/projects/moryoskorot-musilife/deploys)
+
 A narrative-driven life simulation game where players guide an aspiring musician from childhood to stardom (or failure) through meaningful choices and chance encounters.
 
-## 🌐 **[Play the Game Live!](https://moryoskorot.github.io/MusiLife/)**
+## 🌐 **Play the Game Live!**
+- **🏠 Main Site (GitHub Pages)**: [https://moryoskorot.github.io/MusiLife/](https://moryoskorot.github.io/MusiLife/)
+- **⚡ Preview Site (Netlify)**: [https://moryoskorot-musilife.netlify.app/](https://moryoskorot-musilife.netlify.app/)
 
 ## 🎮 Game Overview
 

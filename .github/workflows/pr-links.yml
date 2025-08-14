@@ -1,0 +1,52 @@
+name: PR Preview Links
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [ main ]
+
+jobs:
+  add-preview-links:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    
+    steps:
+    - name: Add preview links comment
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const prNumber = context.payload.pull_request.number;
+          const netlifyPreviewUrl = `https://deploy-preview-${prNumber}--moryoskorot-musilife.netlify.app/`;
+          const netlifyAdminUrl = `https://app.netlify.com/projects/moryoskorot-musilife/deploys`;
+          
+          const comment = `## 🚀 Preview Links Available!
+          
+          ### 🌐 **Live Previews:**
+          - **⚡ Netlify Deploy Preview**: [${netlifyPreviewUrl}](${netlifyPreviewUrl})
+          - **📊 Netlify Deploy Dashboard**: [View Deploy Status](${netlifyAdminUrl})
+          
+          ### 📱 **Testing Instructions:**
+          1. **Wait for deploy** (~30-60 seconds after push)
+          2. **Click the Netlify link** above to test your changes
+          3. **Test on mobile** by opening the link on your phone
+          4. **Compare with main**: [Main Site](https://moryoskorot.github.io/MusiLife/)
+          
+          ### 🔄 **Deploy Status:**
+          - ✅ **GitHub Pages (Main)**: Always represents the stable main branch
+          - ⚡ **Netlify (Preview)**: Updates automatically with every push to this PR
+          
+          ---
+          
+          💡 **Tip**: The Netlify preview URL will update automatically every time you push new commits to this PR!`;
+          
+          github.rest.issues.createComment({
+            issue_number: prNumber,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
