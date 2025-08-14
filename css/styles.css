@@ -168,7 +168,8 @@ body {
     display: grid;
     grid-template-columns: 400px 1fr 250px;
     gap: 1rem;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 170px);
+    margin-bottom: 50px;
 }
 
 /* Stats Panel */
@@ -475,11 +476,11 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255,255,255,0.1);
     padding: 0.8rem 0;
-    z-index: 100;
+    z-index: 9999;
 }
 
 .credits {
