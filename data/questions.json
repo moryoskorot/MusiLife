@@ -830,7 +830,7 @@
             "intelligence": 1,
             "skill": 1,
             "resources": {
-              "money": 300,
+              "money": 150,
               "audience": 10
             }
           }
@@ -841,7 +841,7 @@
             "charisma": 1,
             "happiness": 2,
             "resources": {
-              "money": 400
+              "money": 200
             }
           }
         },
@@ -851,7 +851,7 @@
             "skill": 1,
             "charisma": 1,
             "resources": {
-              "money": 250,
+              "money": 125,
               "audience": 20
             }
           }
@@ -860,7 +860,7 @@
           "text": "Work retail to pay the bills",
           "effects": {
             "resources": {
-              "money": 500,
+              "money": 250,
               "happiness": -3,
               "motivation": -1
             }
@@ -879,7 +879,7 @@
           "effects": {
             "charisma": 1,
             "resources": {
-              "money": 100,
+              "money": 50,
               "audience": 15
             }
           }
@@ -889,7 +889,7 @@
           "effects": {
             "creativity": 1,
             "resources": {
-              "money": 75,
+              "money": 35,
               "audience": 25,
               "fame": 1
             }
@@ -900,7 +900,7 @@
           "effects": {
             "skill": 1,
             "resources": {
-              "money": 120,
+              "money": 60,
               "audience": 10
             }
           }
@@ -910,7 +910,7 @@
           "effects": {
             "happiness": 1,
             "resources": {
-              "money": 150,
+              "money": 75,
               "audience": 20
             }
           }
@@ -928,7 +928,7 @@
           "effects": {
             "creativity": 1,
             "resources": {
-              "money": 400
+              "money": 200
             }
           }
         },
@@ -938,7 +938,7 @@
             "creativity": 2,
             "intelligence": 1,
             "resources": {
-              "money": 600,
+              "money": 300,
               "fame": 2
             }
           }
@@ -949,7 +949,7 @@
             "creativity": 1,
             "charisma": 1,
             "resources": {
-              "money": 800,
+              "money": 400,
               "fame": 1
             }
           }

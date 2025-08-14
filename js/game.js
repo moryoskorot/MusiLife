@@ -765,19 +765,19 @@ class UIManager {
         let merchSales = 0;
         let effectMessages = [];
 
-        // Health decay based on age
-        if (age >= 30) {
+        // Health decay based on age (increased rates)
+        if (age >= 25) {
             if (age >= 65) {
-                healthDecay = Math.floor(Math.random() * 3) + 4; // 4-6
+                healthDecay = Math.floor(Math.random() * 4) + 5; // 5-8
                 effectMessages.push(`🏥 Senior health decline: -${healthDecay} Health`);
             } else if (age >= 50) {
-                healthDecay = Math.floor(Math.random() * 3) + 3; // 3-5
+                healthDecay = Math.floor(Math.random() * 3) + 4; // 4-6
                 effectMessages.push(`⚕️ Middle-age health decline: -${healthDecay} Health`);
             } else if (age >= 40) {
-                healthDecay = Math.floor(Math.random() * 3) + 2; // 2-4
+                healthDecay = Math.floor(Math.random() * 3) + 3; // 3-5
                 effectMessages.push(`🩺 Age-related health decline: -${healthDecay} Health`);
             } else {
-                healthDecay = Math.floor(Math.random() * 2) + 1; // 1-2
+                healthDecay = Math.floor(Math.random() * 2) + 2; // 2-3
                 effectMessages.push(`💪 Minor aging effects: -${healthDecay} Health`);
             }
 
@@ -785,23 +785,20 @@ class UIManager {
             player.resources.health = Math.max(0, player.resources.health);
         }
 
-        // Living costs based on age and lifestyle (reduced for better balance)
+        // Living costs based on age and lifestyle (single occurrence)
         if (age >= 20) {
             if (age >= 65) {
                 livingCosts = Math.floor(Math.random() * 400) + 800; // $800-1200
-                effectMessages.push(`🏠 Senior living costs: -$${livingCosts}`);
             } else if (age >= 40) {
                 livingCosts = Math.floor(Math.random() * 300) + 400; // $400-700
-                effectMessages.push(`🏡 Adult living expenses: -$${livingCosts}`);
             } else if (age >= 30) {
                 livingCosts = Math.floor(Math.random() * 200) + 300; // $300-500
-                effectMessages.push(`🏘️ Established adult costs: -$${livingCosts}`);
             } else {
                 livingCosts = Math.floor(Math.random() * 150) + 50; // $50-200
-                effectMessages.push(`🏠 Young adult expenses: -$${livingCosts}`);
             }
 
             player.resources.money -= livingCosts;
+            effectMessages.push(`🏠 Living expenses: -$${livingCosts}`);
         }
 
         // Fame-based income (passive earnings)
