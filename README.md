@@ -1,6 +1,10 @@
 # MusiLife - Life of a Musician
 
+> **Built with the help of [Cline](https://github.com/cline/cline) - AI coding assistant** 🤖✨
+
 A narrative-driven life simulation game where players guide an aspiring musician from childhood to stardom (or failure) through meaningful choices and chance encounters.
+
+## 🌐 **[Play the Game Live!](https://moryoskorot.github.io/MusiLife/)**
 
 ## 🎮 Game Overview
 

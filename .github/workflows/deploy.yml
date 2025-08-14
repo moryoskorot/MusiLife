@@ -1,0 +1,113 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Security scan job
+  security-scan:
+    runs-on: ubuntu-latest
+    name: Security Scan
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run security scan with CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: javascript
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
+    - name: Scan for sensitive data
+      run: |
+        echo "Scanning for potential security issues..."
+        # Check for common security issues in web apps
+        if grep -r "console\.log" js/ css/ *.html || true; then
+          echo "⚠️  Warning: console.log statements found (consider removing for production)"
+        fi
+        
+        if grep -r "alert(" js/ css/ *.html || true; then
+          echo "⚠️  Warning: alert() statements found (consider replacing with proper UI feedback)"
+        fi
+        
+        # Check for inline scripts (CSP concern)
+        if grep -r "javascript:" *.html || true; then
+          echo "❌ Error: Inline JavaScript found (CSP violation)"
+          exit 1
+        fi
+        
+        # Check for external CDN links (make sure they're from trusted sources)
+        echo "✅ Security scan completed"
+
+  # Build and deploy job
+  deploy:
+    runs-on: ubuntu-latest
+    needs: security-scan
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js (for any future build steps)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Validate HTML
+      run: |
+        # Install html5validator
+        pip install html5validator
+        # Validate HTML files
+        html5validator --root . --match "*.html" || echo "HTML validation warnings found"
+
+    - name: Optimize files for production
+      run: |
+        echo "Preparing files for deployment..."
+        
+        # Remove debug functions from production JS
+        sed -i 's/console\.log.*;//g' js/game.js || true
+        
+        # Add cache busting to CSS and JS files
+        TIMESTAMP=$(date +%s)
+        sed -i "s/styles\.css/styles.css?v=$TIMESTAMP/g" index.html
+        sed -i "s/game\.js/game.js?v=$TIMESTAMP/g" index.html
+        
+        echo "✅ Files optimized for production"
+
+    - name: Add security headers via meta tags
+      run: |
+        # Add security meta tags to HTML
+        sed -i '/<head>/a\    <meta http-equiv="X-Content-Type-Options" content="nosniff">' index.html
+        sed -i '/<head>/a\    <meta http-equiv="X-Frame-Options" content="DENY">' index.html
+        sed -i '/<head>/a\    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">' index.html
+        echo "✅ Security headers added"
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+# Set permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  security-events: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
