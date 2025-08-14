@@ -277,12 +277,21 @@ class UIManager {
         // Placeholder for choice handling
         console.log(`Choice ${choiceNumber} selected`);
         
-        // Add a test log entry
-        this.gameState.addLogEntry(`Selected option ${choiceNumber} (placeholder)`);
+        // Add a test log entry with feedback instead of alert
+        this.gameState.addLogEntry(`Selected option ${choiceNumber} - Game logic coming soon!`);
         this.updateGameLog();
         
-        // For now, just show an alert
-        alert(`You selected choice ${choiceNumber}. Game logic coming soon!`);
+        // Visual feedback: briefly highlight the choice button
+        const choiceButtons = document.querySelectorAll('.choice-button');
+        const selectedButton = choiceButtons[choiceNumber - 1];
+        if (selectedButton) {
+            selectedButton.style.backgroundColor = 'rgba(255, 215, 0, 0.3)';
+            selectedButton.style.borderColor = '#ffd700';
+            setTimeout(() => {
+                selectedButton.style.backgroundColor = '';
+                selectedButton.style.borderColor = '';
+            }, 1000);
+        }
     }
 
     // Animate stat changes

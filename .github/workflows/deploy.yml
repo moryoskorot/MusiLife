@@ -36,9 +36,18 @@ jobs:
         fi
         
         # Check for inline scripts (CSP concern)
-        if grep -r "javascript:" *.html || true; then
+        if grep -r "javascript:" *.html; then
           echo "❌ Error: Inline JavaScript found (CSP violation)"
           exit 1
+        else
+          echo "✅ No CSP violations found"
+        fi
+        
+        # Check for inline event handlers
+        if grep -rE "on[a-zA-Z]+=" *.html; then
+          echo "⚠️  Warning: Inline event handlers found (potential CSP concern)"
+        else
+          echo "✅ No inline event handlers found"
         fi
         
         # Check for external CDN links (make sure they're from trusted sources)
