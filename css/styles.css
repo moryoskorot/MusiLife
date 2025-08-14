@@ -166,7 +166,7 @@ body {
 
 .game-layout {
     display: grid;
-    grid-template-columns: 250px 1fr 250px;
+    grid-template-columns: 400px 1fr 250px;
     gap: 1rem;
     height: calc(100vh - 120px);
 }
@@ -178,9 +178,17 @@ body {
     border-radius: 12px;
     padding: 1.5rem;
     overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
-.stats-panel h4 {
+.stats-section, .resources-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-section h4, .resources-section h4 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -191,7 +199,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    margin-bottom: 2rem;
 }
 
 .stat-item {

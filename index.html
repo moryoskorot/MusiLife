@@ -46,86 +46,92 @@
 
         <!-- Main Game Layout -->
         <div class="game-layout">
-            <!-- Left Panel: Stats -->
+            <!-- Left Panel: Stats and Resources Side by Side -->
             <aside class="stats-panel">
-                <h4>Stats</h4>
-                <div class="stats-grid">
-                    <div class="stat-item" data-tooltip="Charisma">
-                        <span class="stat-icon">🎭</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="charisma-bar"></div>
+                <!-- Stats Section -->
+                <div class="stats-section">
+                    <h4>Stats</h4>
+                    <div class="stats-grid">
+                        <div class="stat-item" data-tooltip="Charisma">
+                            <span class="stat-icon">🎭</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="charisma-bar"></div>
+                            </div>
+                            <span class="stat-value" id="charisma-value">0</span>
                         </div>
-                        <span class="stat-value" id="charisma-value">0</span>
-                    </div>
-                    <div class="stat-item" data-tooltip="Vocals">
-                        <span class="stat-icon">🎤</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="vocals-bar"></div>
+                        <div class="stat-item" data-tooltip="Vocals">
+                            <span class="stat-icon">🎤</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="vocals-bar"></div>
+                            </div>
+                            <span class="stat-value" id="vocals-value">0</span>
                         </div>
-                        <span class="stat-value" id="vocals-value">0</span>
-                    </div>
-                    <div class="stat-item" data-tooltip="Rhythm">
-                        <span class="stat-icon">🥁</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="rhythm-bar"></div>
+                        <div class="stat-item" data-tooltip="Rhythm">
+                            <span class="stat-icon">🥁</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="rhythm-bar"></div>
+                            </div>
+                            <span class="stat-value" id="rhythm-value">0</span>
                         </div>
-                        <span class="stat-value" id="rhythm-value">0</span>
-                    </div>
-                    <div class="stat-item" data-tooltip="Creativity">
-                        <span class="stat-icon">🎨</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="creativity-bar"></div>
+                        <div class="stat-item" data-tooltip="Creativity">
+                            <span class="stat-icon">🎨</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="creativity-bar"></div>
+                            </div>
+                            <span class="stat-value" id="creativity-value">0</span>
                         </div>
-                        <span class="stat-value" id="creativity-value">0</span>
-                    </div>
-                    <div class="stat-item" data-tooltip="Luck">
-                        <span class="stat-icon">🍀</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="luck-bar"></div>
+                        <div class="stat-item" data-tooltip="Luck">
+                            <span class="stat-icon">🍀</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="luck-bar"></div>
+                            </div>
+                            <span class="stat-value" id="luck-value">0</span>
                         </div>
-                        <span class="stat-value" id="luck-value">0</span>
-                    </div>
-                    <div class="stat-item" data-tooltip="Skill">
-                        <span class="stat-icon">🎸</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="skill-bar"></div>
+                        <div class="stat-item" data-tooltip="Skill">
+                            <span class="stat-icon">🎸</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="skill-bar"></div>
+                            </div>
+                            <span class="stat-value" id="skill-value">0</span>
                         </div>
-                        <span class="stat-value" id="skill-value">0</span>
-                    </div>
-                    <div class="stat-item" data-tooltip="Intelligence">
-                        <span class="stat-icon">🧠</span>
-                        <div class="stat-bar">
-                            <div class="stat-fill" id="intelligence-bar"></div>
+                        <div class="stat-item" data-tooltip="Intelligence">
+                            <span class="stat-icon">🧠</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="intelligence-bar"></div>
+                            </div>
+                            <span class="stat-value" id="intelligence-value">0</span>
                         </div>
-                        <span class="stat-value" id="intelligence-value">0</span>
                     </div>
                 </div>
 
-                <h4>Resources</h4>
-                <div class="resources-grid">
-                    <div class="resource-item" data-tooltip="Motivation">
-                        <span class="resource-icon">⚡</span>
-                        <span class="resource-value" id="motivation-value">70</span>
-                    </div>
-                    <div class="resource-item" data-tooltip="Happiness">
-                        <span class="resource-icon">😊</span>
-                        <span class="resource-value" id="happiness-value">65</span>
-                    </div>
-                    <div class="resource-item" data-tooltip="Audience">
-                        <span class="resource-icon">👥</span>
-                        <span class="resource-value" id="audience-value">0</span>
-                    </div>
-                    <div class="resource-item" data-tooltip="Fame">
-                        <span class="resource-icon">⭐</span>
-                        <span class="resource-value" id="fame-value">0</span>
-                    </div>
-                    <div class="resource-item" data-tooltip="Money">
-                        <span class="resource-icon">💰</span>
-                        <span class="resource-value" id="money-value">$200</span>
-                    </div>
-                    <div class="resource-item" data-tooltip="Health">
-                        <span class="resource-icon">❤️</span>
-                        <span class="resource-value" id="health-value">95</span>
+                <!-- Resources Section -->
+                <div class="resources-section">
+                    <h4>Resources</h4>
+                    <div class="resources-grid">
+                        <div class="resource-item" data-tooltip="Motivation">
+                            <span class="resource-icon">⚡</span>
+                            <span class="resource-value" id="motivation-value">70</span>
+                        </div>
+                        <div class="resource-item" data-tooltip="Happiness">
+                            <span class="resource-icon">😊</span>
+                            <span class="resource-value" id="happiness-value">65</span>
+                        </div>
+                        <div class="resource-item" data-tooltip="Audience">
+                            <span class="resource-icon">👥</span>
+                            <span class="resource-value" id="audience-value">0</span>
+                        </div>
+                        <div class="resource-item" data-tooltip="Fame">
+                            <span class="resource-icon">⭐</span>
+                            <span class="resource-value" id="fame-value">0</span>
+                        </div>
+                        <div class="resource-item" data-tooltip="Money">
+                            <span class="resource-icon">💰</span>
+                            <span class="resource-value" id="money-value">$200</span>
+                        </div>
+                        <div class="resource-item" data-tooltip="Health">
+                            <span class="resource-icon">❤️</span>
+                            <span class="resource-value" id="health-value">95</span>
+                        </div>
                     </div>
                 </div>
             </aside>
