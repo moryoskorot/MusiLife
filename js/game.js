@@ -259,7 +259,10 @@ class UIManager {
         const logContainer = document.getElementById('game-log');
         logContainer.innerHTML = '';
 
-        this.gameState.player.gameLog.forEach(entry => {
+        // Reverse the array to show most recent entries at the top
+        const reversedLog = [...this.gameState.player.gameLog].reverse();
+        
+        reversedLog.forEach(entry => {
             const logEntry = document.createElement('div');
             logEntry.className = 'log-entry slide-in';
             logEntry.innerHTML = `
@@ -269,8 +272,7 @@ class UIManager {
             logContainer.appendChild(logEntry);
         });
 
-        // Scroll to bottom
-        logContainer.scrollTop = logContainer.scrollHeight;
+        // No need to scroll since newest entries are now at the top
     }
 
     handleChoice(choiceNumber) {
