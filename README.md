@@ -24,11 +24,12 @@ A narrative-driven life simulation game where players guide an aspiring musician
 
 The project includes comprehensive documentation for both players and developers:
 
-- **[GAMEPLAY.md](GAMEPLAY.md)** - Detailed game mechanics and rules
-- **[PLAYER.md](PLAYER.md)** - Character creation and progression guide
-- **[TECHNICAL.md](TECHNICAL.md)** - Implementation details for developers
-- **[GAME_CONSTANTS.md](GAME_CONSTANTS.md)** - All game values and constants
-- **[ISSUES_AND_PRIORITIES.md](ISSUES_AND_PRIORITIES.md)** - Development roadmap
+- **[GAMEPLAY.md](context/GAMEPLAY.md)** - Detailed game mechanics and rules
+- **[PLAYER.md](context/PLAYER.md)** - Character creation and progression guide
+- **[TECHNICAL.md](context/TECHNICAL.md)** - Implementation details for developers
+- **[GAME_CONSTANTS.md](context/GAME_CONSTANTS.md)** - All game values and constants
+- **[ISSUES_AND_PRIORITIES.md](context/ISSUES_AND_PRIORITIES.md)** - Development roadmap
+- **[GITHUB_PAGES_SETUP.md](context/GITHUB_PAGES_SETUP.md)** - Setup instructions for GitHub Pages
 
 ## 🎯 Game Goals
 
