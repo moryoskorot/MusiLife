@@ -83,18 +83,22 @@ class GameState {
         });
     }
 
-    // Load game data from JSON files
+    // Load game data from YAML files
     async loadGameData() {
         try {
             const [questionsResponse, opportunitiesResponse, eventsResponse] = await Promise.all([
-                fetch('./data/questions.json'),
-                fetch('./data/opportunities.json'),
-                fetch('./data/events.json')
+                fetch('./data/questions.yaml'),
+                fetch('./data/opportunities.yaml'),
+                fetch('./data/events.yaml')
             ]);
             
-            this.gameData.questions = (await questionsResponse.json()).questions;
-            this.gameData.opportunities = (await opportunitiesResponse.json()).opportunities;
-            this.gameData.events = (await eventsResponse.json()).events;
+            const questionsYaml = await questionsResponse.text();
+            const opportunitiesYaml = await opportunitiesResponse.text();
+            const eventsYaml = await eventsResponse.text();
+            
+            this.gameData.questions = jsyaml.load(questionsYaml).questions;
+            this.gameData.opportunities = jsyaml.load(opportunitiesYaml).opportunities;
+            this.gameData.events = jsyaml.load(eventsYaml).events;
             
             console.log('Game data loaded successfully!');
             return true;

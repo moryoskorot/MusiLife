@@ -9,7 +9,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' fonts.googleapis.com fonts.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; script-src 'self'; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' fonts.googleapis.com fonts.gstatic.com cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; script-src 'self' cdn.jsdelivr.net; img-src 'self' data:;">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
@@ -186,6 +186,8 @@
     <!-- Tooltip -->
     <div id="tooltip" class="tooltip"></div>
 
+    <!-- YAML Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="js/game.js"></script>
 </body>
 </html>
