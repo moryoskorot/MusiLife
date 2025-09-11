@@ -1,4 +1,6 @@
 # MusiLife - Life of a Musician
+> This was an experiment with Cline
+> **Currently Abandoned and Unoptimized** ( in terms of stats and gameplay) but still a nice experience to go through
 
 > **Built with the help of [Cline](https://github.com/cline/cline) - AI coding assistant** 🤖✨
 
